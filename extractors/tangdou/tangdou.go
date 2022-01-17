@@ -1,16 +1,16 @@
 package tangdou
 
 import (
-	"github.com/iawia002/annie/extractors/types"
-	"github.com/iawia002/annie/request"
-	"github.com/iawia002/annie/utils"
+	"github.com/iawia002/lux/extractors/types"
+	"github.com/iawia002/lux/request"
+	"github.com/iawia002/lux/utils"
 )
 
 const referer = "http://www.tangdou.com/html/playlist/view/4173"
 
 type extractor struct{}
 
-// New returns a youtube extractor.
+// New returns a tangdou extractor.
 func New() types.Extractor {
 	return &extractor{}
 }

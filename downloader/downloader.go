@@ -17,9 +17,9 @@ import (
 
 	"github.com/cheggaaa/pb/v3"
 
-	"github.com/iawia002/annie/extractors/types"
-	"github.com/iawia002/annie/request"
-	"github.com/iawia002/annie/utils"
+	"github.com/iawia002/lux/extractors/types"
+	"github.com/iawia002/lux/request"
+	"github.com/iawia002/lux/utils"
 )
 
 // Options defines options used in downloading.
@@ -67,8 +67,7 @@ func New(option Options) *Downloader {
 }
 
 // caption downloads danmaku, subtitles, etc
-func (downloader *Downloader) caption(url, fileName, ext string) error {
-	fmt.Println("\nDownloading captions...")
+func (downloader *Downloader) caption(url, fileName, ext string, transform func([]byte) ([]byte, error)) error {
 
 	refer := downloader.option.Refer
 	if refer == "" {
@@ -78,6 +77,14 @@ func (downloader *Downloader) caption(url, fileName, ext string) error {
 	if err != nil {
 		return err
 	}
+
+	if transform != nil {
+		body, err = transform(body)
+		if err != nil {
+			return err
+		}
+	}
+
 	filePath, err := utils.FilePath(fileName, ext, downloader.option.FileNameLength, downloader.option.OutputPath, true)
 	if err != nil {
 		return err
@@ -490,7 +497,7 @@ func mergeMultiPart(filepath string, parts []*FilePartMeta) error {
 func (downloader *Downloader) aria2(title string, stream *types.Stream) error {
 	rpcData := Aria2RPCData{
 		JSONRPC: "2.0",
-		ID:      "annie", // can be modified
+		ID:      "lux", // can be modified
 		Method:  "aria2.addUri",
 	}
 	rpcData.Params[0] = "token:" + downloader.option.Aria2Token
@@ -556,8 +563,14 @@ func (downloader *Downloader) Download(data *types.Data) error {
 	}
 
 	// download caption
-	if downloader.option.Caption && data.Caption != nil {
-		downloader.caption(data.Caption.URL, title, data.Caption.Ext) // nolint
+	if downloader.option.Caption && data.Captions != nil {
+		fmt.Println("\nDownloading captions...")
+		for k, v := range data.Captions {
+			if v != nil {
+				fmt.Printf("Downloading %s ...\n", k)
+				downloader.caption(v.URL, title, v.Ext, v.Transform) // nolint
+			}
+		}
 	}
 
 	// Use aria2 rpc to download

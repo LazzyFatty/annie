@@ -1,4 +1,4 @@
-package yinyuetai
+package hupu
 
 import (
 	"testing"
@@ -7,7 +7,7 @@ import (
 	"github.com/iawia002/lux/test"
 )
 
-func TestDownload(t *testing.T) {
+func TestHupu(t *testing.T) {
 	tests := []struct {
 		name string
 		args test.Args
@@ -15,10 +15,8 @@ func TestDownload(t *testing.T) {
 		{
 			name: "normal test",
 			args: test.Args{
-				URL:     "http://v.yinyuetai.com/video/3386385",
-				Title:   "什么是爱/ What is Love",
-				Size:    20028736,
-				Quality: "流畅",
+				URL:   "https://bbs.hupu.com/47401018.html?is_reflow=1&cid=84752419&bddid=56KXU5QUJH4VGM26SFPTYTKNI5CFNJMX736TIZ52DXLGUAAMBJVA01&puid=16522089&client=8577E496-4D9B-4E5C-A9DB-A8EF5C1956D2",
+				Title: "结局引起舒适",
 			},
 		},
 	}

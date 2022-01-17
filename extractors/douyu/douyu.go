@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/iawia002/annie/extractors/types"
-	"github.com/iawia002/annie/request"
-	"github.com/iawia002/annie/utils"
+	"github.com/iawia002/lux/extractors/types"
+	"github.com/iawia002/lux/request"
+	"github.com/iawia002/lux/utils"
 )
 
 type douyuData struct {
@@ -49,7 +49,7 @@ func douyuM3u8(url string) ([]douyuURLInfo, int64, error) {
 
 type extractor struct{}
 
-// New returns a youtube extractor.
+// New returns a douyu extractor.
 func New() types.Extractor {
 	return &extractor{}
 }

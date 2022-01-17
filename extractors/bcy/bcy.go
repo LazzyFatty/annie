@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/iawia002/annie/extractors/types"
-	"github.com/iawia002/annie/parser"
-	"github.com/iawia002/annie/request"
-	"github.com/iawia002/annie/utils"
+	"github.com/iawia002/lux/extractors/types"
+	"github.com/iawia002/lux/parser"
+	"github.com/iawia002/lux/request"
+	"github.com/iawia002/lux/utils"
 )
 
 type bcyData struct {
@@ -23,7 +23,7 @@ type bcyData struct {
 
 type extractor struct{}
 
-// New returns a youtube extractor.
+// New returns a bcy extractor.
 func New() types.Extractor {
 	return &extractor{}
 }

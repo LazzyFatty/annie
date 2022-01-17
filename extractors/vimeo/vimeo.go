@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/iawia002/annie/extractors/types"
-	"github.com/iawia002/annie/request"
-	"github.com/iawia002/annie/utils"
+	"github.com/iawia002/lux/extractors/types"
+	"github.com/iawia002/lux/request"
+	"github.com/iawia002/lux/utils"
 )
 
 type vimeoProgressive struct {
@@ -37,7 +37,7 @@ type vimeo struct {
 
 type extractor struct{}
 
-// New returns a youtube extractor.
+// New returns a vimeo extractor.
 func New() types.Extractor {
 	return &extractor{}
 }

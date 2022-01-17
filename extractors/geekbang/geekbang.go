@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/iawia002/annie/extractors/types"
-	"github.com/iawia002/annie/request"
-	"github.com/iawia002/annie/utils"
+	"github.com/iawia002/lux/extractors/types"
+	"github.com/iawia002/lux/request"
+	"github.com/iawia002/lux/utils"
 )
 
 type geekData struct {
@@ -73,7 +73,7 @@ func geekM3u8(url string) ([]geekURLInfo, error) {
 
 type extractor struct{}
 
-// New returns a youtube extractor.
+// New returns a geekbang extractor.
 func New() types.Extractor {
 	return &extractor{}
 }

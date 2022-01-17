@@ -4,9 +4,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/iawia002/annie/extractors/types"
-	"github.com/iawia002/annie/request"
-	"github.com/iawia002/annie/utils"
+	"github.com/iawia002/lux/extractors/types"
+	"github.com/iawia002/lux/request"
+	"github.com/iawia002/lux/utils"
 )
 
 const (
@@ -77,7 +77,7 @@ func getSrc(html string) []*src {
 
 type extractor struct{}
 
-// New returns a youtube extractor.
+// New returns a xvideos extractor.
 func New() types.Extractor {
 	return &extractor{}
 }

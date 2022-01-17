@@ -4,9 +4,9 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/iawia002/annie/extractors/types"
-	"github.com/iawia002/annie/request"
-	"github.com/iawia002/annie/utils"
+	"github.com/iawia002/lux/extractors/types"
+	"github.com/iawia002/lux/request"
+	"github.com/iawia002/lux/utils"
 )
 
 const (
@@ -37,7 +37,7 @@ func prepareEmbedURL(url string) string {
 
 type extractor struct{}
 
-// New returns a youtube extractor.
+// New returns a udn extractor.
 func New() types.Extractor {
 	return &extractor{}
 }

@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/iawia002/annie/extractors/types"
-	"github.com/iawia002/annie/request"
-	"github.com/iawia002/annie/utils"
+	"github.com/iawia002/lux/extractors/types"
+	"github.com/iawia002/lux/request"
+	"github.com/iawia002/lux/utils"
 )
 
 type qqVideoInfo struct {
@@ -170,7 +170,7 @@ func genStreams(vid, cdn string, data qqVideoInfo) (map[string]*types.Stream, er
 
 type extractor struct{}
 
-// New returns a youtube extractor.
+// New returns a qq extractor.
 func New() types.Extractor {
 	return &extractor{}
 }

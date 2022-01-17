@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/iawia002/annie/extractors/types"
-	"github.com/iawia002/annie/request"
-	"github.com/iawia002/annie/utils"
+	"github.com/iawia002/lux/extractors/types"
+	"github.com/iawia002/lux/request"
+	"github.com/iawia002/lux/utils"
 )
 
 type twitter struct {
@@ -21,7 +21,7 @@ type twitter struct {
 
 type extractor struct{}
 
-// New returns a youtube extractor.
+// New returns a twitter extractor.
 func New() types.Extractor {
 	return &extractor{}
 }
