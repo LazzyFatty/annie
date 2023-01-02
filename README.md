@@ -1,5 +1,7 @@
 <h1 align="center">Lux</h1>
 
+<p align="center"><i>Let there be Lux!</i></p>
+
 <div align="center">
   <a href="https://codecov.io/gh/iawia002/lux">
     <img src="https://img.shields.io/codecov/c/github/iawia002/lux.svg?style=flat-square" alt="Codecov">
@@ -629,6 +631,7 @@ $ lux -j "https://www.bilibili.com/video/av20203945"
 | 喜马拉雅   | <https://www.ximalaya.com>   |           |           | ✓        |             |                   | [![ximalaya](https://github.com/iawia002/lux/actions/workflows/stream_ximalaya.yml/badge.svg)](https://github.com/iawia002/lux/actions/workflows/stream_ximalaya.yml)       |
 | 快手       | <https://www.kuaishou.com>   | ✓         |           |          |             |                   | [![kuaishou](https://github.com/iawia002/lux/actions/workflows/stream_kuaishou.yml/badge.svg)](https://github.com/iawia002/lux/actions/workflows/stream_kuaishou.yml)       |
 | Reddit     | <https://www.reddit.com>     | ✓         | ✓         |          |             |                   | [![reddit](https://github.com/iawia002/lux/actions/workflows/stream_reddit.yml/badge.svg)](https://github.com/iawia002/lux/actions/workflows/stream_reddit.yml)       |
+| VKontakte  | <https://vk.com>             | ✓         |           |          |             |                   |  [![vk](https://github.com/iawia002/lux/actions/workflows/stream_vk.yml/badge.svg)](https://github.com/iawia002/lux/actions/workflows/stream_vk.yml/)       |
 
 ## Known issues
 
