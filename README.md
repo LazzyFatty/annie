@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/codecov/c/github/iawia002/lux.svg?style=flat-square" alt="Codecov">
   </a>
   <a href="https://github.com/iawia002/lux/actions">
-    <img src="https://img.shields.io/github/workflow/status/iawia002/lux/ci?style=flat-square" alt="GitHub Workflow Status">
+    <img src="https://img.shields.io/github/actions/workflow/status/iawia002/lux/ci.yml?style=flat-square" alt="GitHub Workflow Status">
   </a>
   <a href="https://goreportcard.com/report/github.com/iawia002/lux">
     <img src="https://goreportcard.com/badge/github.com/iawia002/lux?style=flat-square" alt="Go Report Card">
@@ -354,7 +354,15 @@ $ HTTP_PROXY="socks5://127.0.0.1:1080/" lux -i "https://www.youtube.com/watch?v=
 
 ### Multi-Thread
 
-Use `-n` option to set the number of download threads(default is 10, only works for multiple-parts video).
+Use `--multi-thread` or `-m` multiple threads to download single video.
+
+Use `--thread` or `-n` option to set the number of download threads(default is 10).
+
+> Note: If the video has multi fragment, the number of actual download threads will increase.
+>
+> For example:
+> * If `-n` is set to 10, and the video has 2 fragments, then 20 threads will actually be used.
+> * If the video has 20 fragments, only 10 fragments are downloaded in the same time, the actual threads count is 100.
 
 > **Special Tips:** Use too many threads in **mgtv** download will cause HTTP 403 error, we recommend setting the number of threads to **1**.
 
@@ -569,7 +577,7 @@ $ lux -j "https://www.bilibili.com/video/av20203945"
 
 ```
   -ccode string
-    	Youku ccode (default "0590")
+    	Youku ccode (default "0502")
   -ckey string
     	Youku ckey (default "7B19C0AB12633B22E7FE81271162026020570708D6CC189E4924503C49D243A0DE6CD84A766832C2C99898FC5ED31F3709BB3CDD82C96492E721BDD381735026")
   -password string
